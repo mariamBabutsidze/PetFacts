@@ -9,9 +9,9 @@ import Foundation
 import Combine
 
 struct FactService: FactServicePublisher {
-  public func publisher() -> AnyPublisher<Fact, Error> {
+  public func loadFact() -> AnyPublisher<Facts, Error> {
       let request = FactRequest.randomFact
-      return NetworkingManager.shared.load(request, type: Fact.self)
+      return NetworkingManager.shared.load(request, type: Facts.self)
   }
 }
 

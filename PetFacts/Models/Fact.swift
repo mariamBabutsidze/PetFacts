@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct Facts: Decodable {
+    let data: [Fact]
+}
+
 struct Fact: Decodable {
     let attributes: Attribute
 }

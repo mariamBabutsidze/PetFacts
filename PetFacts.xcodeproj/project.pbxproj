@@ -22,6 +22,8 @@
 		32F800ED2B4C626400DA5465 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800EC2B4C626400DA5465 /* NetworkError.swift */; };
 		32F800EF2B4C66EA00DA5465 /* FactRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800EE2B4C66EA00DA5465 /* FactRequest.swift */; };
 		32F800F42B4C676400DA5465 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800F32B4C676400DA5465 /* Fact.swift */; };
+		32F800F82B4C753A00DA5465 /* FactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800F72B4C753A00DA5465 /* FactViewModel.swift */; };
+		32F800FB2B4C86DA00DA5465 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800FA2B4C86DA00DA5465 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		32F800EC2B4C626400DA5465 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		32F800EE2B4C66EA00DA5465 /* FactRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactRequest.swift; sourceTree = "<group>"; };
 		32F800F32B4C676400DA5465 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
+		32F800F72B4C753A00DA5465 /* FactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewModel.swift; sourceTree = "<group>"; };
+		32F800FA2B4C86DA00DA5465 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +114,11 @@
 		32F800B52B4C575000DA5465 /* PetFacts */ = {
 			isa = PBXGroup;
 			children = (
+				32F800F92B4C86CF00DA5465 /* Common */,
 				32F800E52B4C602800DA5465 /* Networking */,
 				32F800E02B4C59BD00DA5465 /* Services */,
 				32F800F22B4C675500DA5465 /* Models */,
+				32F800F62B4C752800DA5465 /* ViewModels */,
 				32F800B62B4C575000DA5465 /* PetFactsApp.swift */,
 				32F800B82B4C575000DA5465 /* ContentView.swift */,
 				32F800BA2B4C575100DA5465 /* Assets.xcassets */,
@@ -149,9 +155,7 @@
 		32F800E02B4C59BD00DA5465 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				32F800E12B4C5C4500DA5465 /* FactService.swift */,
-				32F800E32B4C5DEC00DA5465 /* FactServicePublisher.swift */,
-				32F800EE2B4C66EA00DA5465 /* FactRequest.swift */,
+				32F800F52B4C74C800DA5465 /* Fact */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -173,6 +177,32 @@
 				32F800F32B4C676400DA5465 /* Fact.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		32F800F52B4C74C800DA5465 /* Fact */ = {
+			isa = PBXGroup;
+			children = (
+				32F800E12B4C5C4500DA5465 /* FactService.swift */,
+				32F800E32B4C5DEC00DA5465 /* FactServicePublisher.swift */,
+				32F800EE2B4C66EA00DA5465 /* FactRequest.swift */,
+			);
+			path = Fact;
+			sourceTree = "<group>";
+		};
+		32F800F62B4C752800DA5465 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				32F800F72B4C753A00DA5465 /* FactViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		32F800F92B4C86CF00DA5465 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				32F800FA2B4C86DA00DA5465 /* Logger.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +342,9 @@
 				32F800EB2B4C624B00DA5465 /* RequestType.swift in Sources */,
 				32F800E42B4C5DEC00DA5465 /* FactServicePublisher.swift in Sources */,
 				32F800E92B4C622B00DA5465 /* RequestProtocol.swift in Sources */,
+				32F800FB2B4C86DA00DA5465 /* Logger.swift in Sources */,
 				32F800F42B4C676400DA5465 /* Fact.swift in Sources */,
+				32F800F82B4C753A00DA5465 /* FactViewModel.swift in Sources */,
 				32F800E72B4C603500DA5465 /* NetworkingManager.swift in Sources */,
 				32F800B72B4C575000DA5465 /* PetFactsApp.swift in Sources */,
 			);

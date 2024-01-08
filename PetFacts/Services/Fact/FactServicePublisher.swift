@@ -9,6 +9,6 @@ import Combine
 import Foundation
 
 protocol FactServicePublisher {
-  func publisher() -> AnyPublisher<Fact, Error>
+  func loadFact() -> AnyPublisher<Facts, Error>
 }
 

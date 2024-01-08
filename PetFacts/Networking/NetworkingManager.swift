@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import OSLog
 
 public protocol NetworkingManagerProtocol {
     func load<T: Decodable>(_ request: RequestProtocol, type: T.Type) -> AnyPublisher<T, Error>
@@ -31,6 +32,7 @@ final class NetworkingManager: NetworkingManagerProtocol {
                 .tryMap { element -> Data in
                     guard let urlResponse = element.response as? HTTPURLResponse, urlResponse.statusCode == 200
                     else {
+                        Log.networkingLogger.log(level: .error, "invalid response")
                         throw URLError(.badServerResponse)
                     }
                     return element.data
@@ -39,6 +41,7 @@ final class NetworkingManager: NetworkingManagerProtocol {
                 .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
         } catch {
+            Log.networkingLogger.log(level: .error, "invalid url")
             return AnyPublisher(Fail<T, Error>(error: NetworkError.invalidUrl))
         }
     }
