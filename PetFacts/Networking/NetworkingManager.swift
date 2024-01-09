@@ -33,7 +33,7 @@ final class NetworkingManager: NetworkingManagerProtocol {
                     guard let urlResponse = element.response as? HTTPURLResponse, urlResponse.statusCode == 200
                     else {
                         Log.networkingLogger.log(level: .error, "invalid response")
-                        throw URLError(.badServerResponse)
+                        throw NetworkError.invalidResponse
                     }
                     return element.data
                 }

@@ -10,6 +10,7 @@ import Combine
 final class FactViewModel: ObservableObject {
     @Published public var fetching = false
     @Published public var fact: Fact?
+    @Published public var showAlert = false
     
     private let factService: FactServicePublisher
     private var factSubscriber: AnyCancellable?
@@ -29,6 +30,7 @@ final class FactViewModel: ObservableObject {
                 case .finished:
                     Log.networkingLogger.log(level: .debug, "Publisher completed successfully.")
                 case .failure(let error):
+                    self.showAlert = true
                     Log.networkingLogger.log(level: .error, "Error: \(error)")
                 }
             }, receiveValue: { value in
