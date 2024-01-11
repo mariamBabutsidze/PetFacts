@@ -12,13 +12,21 @@ struct FactsView: View {
     
     var body: some View {
         ZStack {
-            ForEach(viewModel.facts.reversed(), id: \.index) { fact in
-                fact
-                    .stacked(at: fact.index, in: viewModel.facts.count)
+            ForEach(viewModel.facts.reversed(), id: \.id) { fact in
+                let index = viewModel.facts.firstIndex(where: { $0.id == fact.id }) ?? .zero
+                FactSwipeView(decisionState: $viewModel.decisionState, fact: fact, swipable: index == 0)
+                    .stacked(at: index, in: viewModel.facts.count)
             }
         }
+        .alert(isPresented: $viewModel.showAlert) {
+            Alert(
+                title: Text("Error"),
+                message: Text("Something went wrong."),
+                dismissButton: .cancel()
+            )
+        }
         .onAppear{
-            viewModel.addFacts()
+            viewModel.fetchFacts()
         }
     }
 }

@@ -28,6 +28,7 @@
 		32F801002B4D4E7700DA5465 /* FactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800FF2B4D4E7700DA5465 /* FactsView.swift */; };
 		32F801022B4D505800DA5465 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801012B4D505800DA5465 /* View+Extension.swift */; };
 		32F801042B4D5B7A00DA5465 /* FactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801032B4D5B7A00DA5465 /* FactsViewModel.swift */; };
+		32F801082B501B3500DA5465 /* DecisionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801072B501B3500DA5465 /* DecisionState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		32F800FF2B4D4E7700DA5465 /* FactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsView.swift; sourceTree = "<group>"; };
 		32F801012B4D505800DA5465 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		32F801032B4D5B7A00DA5465 /* FactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewModel.swift; sourceTree = "<group>"; };
+		32F801072B501B3500DA5465 /* DecisionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				32F800F32B4C676400DA5465 /* Fact.swift */,
+				32F801072B501B3500DA5465 /* DecisionState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				32F800FB2B4C86DA00DA5465 /* Logger.swift in Sources */,
 				32F800F42B4C676400DA5465 /* Fact.swift in Sources */,
 				32F800FE2B4D430E00DA5465 /* FactView.swift in Sources */,
+				32F801082B501B3500DA5465 /* DecisionState.swift in Sources */,
 				32F801042B4D5B7A00DA5465 /* FactsViewModel.swift in Sources */,
 				32F800F82B4C753A00DA5465 /* FactViewModel.swift in Sources */,
 				32F800E72B4C603500DA5465 /* NetworkingManager.swift in Sources */,

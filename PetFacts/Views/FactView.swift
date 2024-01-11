@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct FactView: View {
-    @ObservedObject private var viewModel = FactViewModel()
+    var fact: Fact
     
     var body: some View {
         VStack {
-            Text(viewModel.fact?.attributes.body ?? "No Value")
+            Text(fact.attributes.body)
                 .multilineTextAlignment(.center)
                 .font(.title)
                 .bold()
@@ -28,20 +28,10 @@ struct FactView: View {
                 }
         }
         .padding()
-        .onAppear {
-            viewModel.fetchFact()
-        }
-        .alert(isPresented: $viewModel.showAlert) {
-          Alert(
-            title: Text("Error"),
-            message: Text("Something went wrong."),
-            dismissButton: .cancel()
-          )
-        }
     }
 }
 
 #Preview {
-    FactView()
+    FactView(fact: Fact.mockFact)
 }
 
