@@ -9,5 +9,6 @@ import os
 
 enum Log {
     static let networkingLogger = Logger(subsystem: "com.Mariam.PetFacts", category: "networking")
+    static let coreDataLogger = Logger(subsystem: "com.Mariam.PetFacts", category: "coreDataLogger")
     static let generalLogger = Logger(subsystem: "com.Mariam.PetFacts", category: "general")
 }

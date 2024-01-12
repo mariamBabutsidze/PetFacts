@@ -9,7 +9,7 @@ import Combine
 import CoreData
 
 final class LikedFactsViewModel: ObservableObject {
-    @Published public var facts: [Fact] = []
+    @Published private(set) var facts: [Fact] = []
     
     private var asyncFetchRequest: NSAsynchronousFetchRequest<FactEntitty>?
     
@@ -23,7 +23,6 @@ final class LikedFactsViewModel: ObservableObject {
             }
             self.facts = facts
         }
-        
     }
     
     func fetchFacts() {
@@ -33,8 +32,17 @@ final class LikedFactsViewModel: ObservableObject {
             }
             try CoreDataStack.shared.managedContext.execute(asyncFetchRequest)
         } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
+            Log.coreDataLogger.log(level: .error, "Could not fetch \(error), \(error.userInfo)")
         }
+    }
+    
+    func deleteFact(index: Int) {
+        guard let fact = facts[index] as? FactEntitty else {
+          return
+        }
+        CoreDataStack.shared.managedContext.delete(fact)
+        CoreDataStack.shared.saveContext()
+        facts.remove(at: index)
     }
 }
 

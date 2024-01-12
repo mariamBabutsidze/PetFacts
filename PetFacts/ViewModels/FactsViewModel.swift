@@ -10,7 +10,7 @@ import CoreData
 
 final class FactsViewModel: ObservableObject {
     @Published public var decisionState = DecisionState.undecided
-    @Published public var facts: [Fact] = []
+    @Published private(set) var facts: [Fact] = []
     @Published public var showAlert = false
     
     private let visibleFactCount = 5
@@ -63,14 +63,14 @@ final class FactsViewModel: ObservableObject {
                 .sink(receiveCompletion: { completion in
                     switch completion {
                     case .finished:
-                        Log.networkingLogger.log(level: .debug, "Publisher completed successfully.")
+                        Log.generalLogger.log(level: .debug, "Publisher completed successfully.")
                     case .failure(let error):
                         self.showAlert = true
-                        Log.networkingLogger.log(level: .error, "Error: \(error)")
+                        Log.generalLogger.log(level: .error, "Error: \(error)")
                     }
                 }, receiveValue: { value in
                     self.facts = value.data
-                    Log.networkingLogger.log(level: .debug, "Received value: \(String(describing: value))")
+                    Log.generalLogger.log(level: .debug, "Received value: \(String(describing: value))")
                 })
         }
     }
@@ -80,15 +80,15 @@ final class FactsViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
-                    Log.networkingLogger.log(level: .debug, "Publisher completed successfully.")
+                    Log.generalLogger.log(level: .debug, "Publisher completed successfully.")
                 case .failure(let error):
-                    Log.networkingLogger.log(level: .error, "Error: \(error)")
+                    Log.generalLogger.log(level: .error, "Error: \(error)")
                 }
             }, receiveValue: { value in
                 if let fact = value.data.first {
                     self.facts.append(fact)
                 }
-                Log.networkingLogger.log(level: .debug, "Received value: \(String(describing: value))")
+                Log.generalLogger.log(level: .debug, "Received value: \(String(describing: value))")
             })
     }
 }

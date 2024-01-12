@@ -26,7 +26,7 @@ class CoreDataStack {
         container.loadPersistentStores { _, error in
             container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             if let error = error as NSError? {
-                print("Unresolved error \(error), \(error.userInfo)")
+                Log.coreDataLogger.log(level: .error, "Unresolved error \(error), \(error.userInfo)")
             }
         }
         return container
@@ -38,7 +38,7 @@ class CoreDataStack {
         do {
             try managedContext.save()
         } catch let nserror as NSError {
-            print("Unresolved error \(nserror), \(nserror.userInfo)")
+            Log.coreDataLogger.log(level: .error, "Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
 }

@@ -16,8 +16,14 @@ struct LikedFacts: View {
             ForEach(viewModel.facts, id: \.id) { fact in
                 Text(fact.text)
             }
+            .onDelete { indexSet in
+                for index in indexSet {
+                    viewModel.deleteFact(index: index)
+                }
+            }
         }
         .navigationTitle("Favorites")
+        .navigationBarItems(trailing: EditButton())
         .onAppear {
             viewModel.fetchFacts()
         }
