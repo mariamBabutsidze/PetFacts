@@ -25,7 +25,7 @@ struct FactsView: View {
             ZStack {
                 ForEach(viewModel.facts.reversed(), id: \.id) { fact in
                     let index = viewModel.facts.firstIndex(where: { $0.id == fact.id }) ?? .zero
-                    FactSwipeView(decisionState: $viewModel.decisionState, fact: fact, swipable: index == 0)
+                    FactSwipeView(decisionState: $viewModel.decisionState, fact: fact, swipable: viewModel.swipable == fact.id)
                         .stacked(at: index, in: viewModel.facts.count)
                 }
             }

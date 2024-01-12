@@ -19,6 +19,7 @@ struct FactView: View {
                 .bold()
                 .foregroundColor(.white)
                 .padding()
+                .minimumScaleFactor(0.5)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background {
                     Rectangle()

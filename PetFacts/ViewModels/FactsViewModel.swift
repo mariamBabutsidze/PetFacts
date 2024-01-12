@@ -13,6 +13,7 @@ final class FactsViewModel: ObservableObject {
     @Published private(set) var facts: [Fact] = []
     @Published public var showAlert = false
     @Published private(set) var loading = false
+    private(set) var swipable: String?
     public var noFacts: Bool {
         facts.isEmpty && !loading
     }
@@ -60,7 +61,11 @@ final class FactsViewModel: ObservableObject {
     }
     
     private func addNewFact() {
+        if facts.count > 1 {
+            swipable = facts[1].id
+        }
         facts.removeFirst()
+        Log.generalLogger.debug("removed")
         fetchFact()
     }
     
@@ -77,6 +82,7 @@ final class FactsViewModel: ObservableObject {
                         Log.generalLogger.log(level: .error, "Error: \(error)")
                     }
                 }, receiveValue: { value in
+                    self.swipable = value.data.first?.id
                     self.facts = value.data
                     Log.generalLogger.log(level: .debug, "Received value: \(String(describing: value))")
                 })
@@ -95,6 +101,7 @@ final class FactsViewModel: ObservableObject {
             }, receiveValue: { value in
                 if let fact = value.data.first {
                     self.facts.append(fact)
+                    Log.generalLogger.debug("new added")
                 }
                 Log.generalLogger.log(level: .debug, "Received value: \(String(describing: value))")
             })
