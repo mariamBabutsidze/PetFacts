@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FactView: View {
+    @Binding var color: Color
     var fact: Fact
     
     var body: some View {
@@ -22,7 +23,7 @@ struct FactView: View {
                 .background {
                     Rectangle()
                         .foregroundStyle(.ultraThinMaterial)
-                        .background(.blue)
+                        .background(color)
                         .cornerRadius(20)
                         .shadow(radius: 5)
                 }
@@ -32,6 +33,6 @@ struct FactView: View {
 }
 
 #Preview {
-    FactView(fact: DogFact.mockDogFact)
+    FactView(color: .constant(.blue), fact: DogFact.mockDogFact)
 }
 
