@@ -22,13 +22,17 @@
 		32F800ED2B4C626400DA5465 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800EC2B4C626400DA5465 /* NetworkError.swift */; };
 		32F800EF2B4C66EA00DA5465 /* FactRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800EE2B4C66EA00DA5465 /* FactRequest.swift */; };
 		32F800F42B4C676400DA5465 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800F32B4C676400DA5465 /* Fact.swift */; };
-		32F800F82B4C753A00DA5465 /* FactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800F72B4C753A00DA5465 /* FactViewModel.swift */; };
 		32F800FB2B4C86DA00DA5465 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800FA2B4C86DA00DA5465 /* Logger.swift */; };
 		32F800FE2B4D430E00DA5465 /* FactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800FD2B4D430E00DA5465 /* FactView.swift */; };
 		32F801002B4D4E7700DA5465 /* FactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800FF2B4D4E7700DA5465 /* FactsView.swift */; };
 		32F801022B4D505800DA5465 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801012B4D505800DA5465 /* View+Extension.swift */; };
 		32F801042B4D5B7A00DA5465 /* FactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801032B4D5B7A00DA5465 /* FactsViewModel.swift */; };
 		32F801082B501B3500DA5465 /* DecisionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801072B501B3500DA5465 /* DecisionState.swift */; };
+		32F8010A2B5032D800DA5465 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801092B5032D800DA5465 /* CoreDataStack.swift */; };
+		32F801102B5035D600DA5465 /* PetFacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32F8010E2B5035D600DA5465 /* PetFacts.xcdatamodeld */; };
+		32F801172B50368800DA5465 /* FactEntitty+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801152B50368800DA5465 /* FactEntitty+CoreDataClass.swift */; };
+		32F801182B50368800DA5465 /* FactEntitty+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801162B50368800DA5465 /* FactEntitty+CoreDataProperties.swift */; };
+		32F8011A2B50395C00DA5465 /* LikedFacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801192B50395C00DA5465 /* LikedFacts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,13 +71,17 @@
 		32F800EC2B4C626400DA5465 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		32F800EE2B4C66EA00DA5465 /* FactRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactRequest.swift; sourceTree = "<group>"; };
 		32F800F32B4C676400DA5465 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
-		32F800F72B4C753A00DA5465 /* FactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewModel.swift; sourceTree = "<group>"; };
 		32F800FA2B4C86DA00DA5465 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		32F800FD2B4D430E00DA5465 /* FactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactView.swift; sourceTree = "<group>"; };
 		32F800FF2B4D4E7700DA5465 /* FactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsView.swift; sourceTree = "<group>"; };
 		32F801012B4D505800DA5465 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		32F801032B4D5B7A00DA5465 /* FactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewModel.swift; sourceTree = "<group>"; };
 		32F801072B501B3500DA5465 /* DecisionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionState.swift; sourceTree = "<group>"; };
+		32F801092B5032D800DA5465 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		32F8010F2B5035D600DA5465 /* PetFacts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetFacts.xcdatamodel; sourceTree = "<group>"; };
+		32F801152B50368800DA5465 /* FactEntitty+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FactEntitty+CoreDataClass.swift"; sourceTree = "<group>"; };
+		32F801162B50368800DA5465 /* FactEntitty+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FactEntitty+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		32F801192B50395C00DA5465 /* LikedFacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedFacts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +194,9 @@
 			children = (
 				32F800F32B4C676400DA5465 /* Fact.swift */,
 				32F801072B501B3500DA5465 /* DecisionState.swift */,
+				32F8010E2B5035D600DA5465 /* PetFacts.xcdatamodeld */,
+				32F801152B50368800DA5465 /* FactEntitty+CoreDataClass.swift */,
+				32F801162B50368800DA5465 /* FactEntitty+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,7 +214,6 @@
 		32F800F62B4C752800DA5465 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				32F800F72B4C753A00DA5465 /* FactViewModel.swift */,
 				32F801032B4D5B7A00DA5465 /* FactsViewModel.swift */,
 			);
 			path = ViewModels;
@@ -214,6 +224,7 @@
 			children = (
 				32F800FA2B4C86DA00DA5465 /* Logger.swift */,
 				32F801012B4D505800DA5465 /* View+Extension.swift */,
+				32F801092B5032D800DA5465 /* CoreDataStack.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -224,6 +235,7 @@
 				32F800FF2B4D4E7700DA5465 /* FactsView.swift */,
 				32F800B82B4C575000DA5465 /* FactSwipeView.swift */,
 				32F800FD2B4D430E00DA5465 /* FactView.swift */,
+				32F801192B50395C00DA5465 /* LikedFacts.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -369,11 +381,15 @@
 				32F800E92B4C622B00DA5465 /* RequestProtocol.swift in Sources */,
 				32F800FB2B4C86DA00DA5465 /* Logger.swift in Sources */,
 				32F800F42B4C676400DA5465 /* Fact.swift in Sources */,
+				32F801102B5035D600DA5465 /* PetFacts.xcdatamodeld in Sources */,
 				32F800FE2B4D430E00DA5465 /* FactView.swift in Sources */,
+				32F801182B50368800DA5465 /* FactEntitty+CoreDataProperties.swift in Sources */,
+				32F8010A2B5032D800DA5465 /* CoreDataStack.swift in Sources */,
+				32F8011A2B50395C00DA5465 /* LikedFacts.swift in Sources */,
 				32F801082B501B3500DA5465 /* DecisionState.swift in Sources */,
 				32F801042B4D5B7A00DA5465 /* FactsViewModel.swift in Sources */,
-				32F800F82B4C753A00DA5465 /* FactViewModel.swift in Sources */,
 				32F800E72B4C603500DA5465 /* NetworkingManager.swift in Sources */,
+				32F801172B50368800DA5465 /* FactEntitty+CoreDataClass.swift in Sources */,
 				32F800B72B4C575000DA5465 /* PetFactsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,6 +720,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		32F8010E2B5035D600DA5465 /* PetFacts.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				32F8010F2B5035D600DA5465 /* PetFacts.xcdatamodel */,
+			);
+			currentVersion = 32F8010F2B5035D600DA5465 /* PetFacts.xcdatamodel */;
+			path = PetFacts.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 32F800AB2B4C575000DA5465 /* Project object */;
 }

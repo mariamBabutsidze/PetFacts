@@ -41,7 +41,6 @@ struct FactSwipeView: View {
             decisionState = .liked
         default:
             offset = .zero
-            decisionState = .undecided
         }
     }
 }
