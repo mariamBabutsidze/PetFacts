@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct PetFactsApp: App {
+    @StateObject private var navigationState = NavigationState()
+    
     var body: some Scene {
         WindowGroup {
-            FactsView()
+            NavigationStack(path: $navigationState.routers) {
+                FactsView()
+                    .navigationDestination(for: Routers.self) { router in
+                        switch router {
+                        case .fact(let routers):
+                            FactRouter(routers: routers).configure()
+                        }
+                    }
+            }.environmentObject(navigationState)
         }
     }
 }
