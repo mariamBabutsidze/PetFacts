@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LikedFacts: View {
+    @EnvironmentObject private var navigationState: NavigationState
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }

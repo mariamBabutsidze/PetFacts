@@ -14,7 +14,7 @@ struct PetFactsApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $navigationState.routers) {
-                FactsView()
+                ContentView()
                     .navigationDestination(for: Routers.self) { router in
                         switch router {
                         case .fact(let routers):

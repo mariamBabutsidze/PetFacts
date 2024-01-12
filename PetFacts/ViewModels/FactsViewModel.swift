@@ -46,19 +46,21 @@ final class FactsViewModel: ObservableObject {
     }
     
     public func fetchFacts() {
-        factSubscriber = factService.loadFacts(limit: visibleFactCount)
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    Log.networkingLogger.log(level: .debug, "Publisher completed successfully.")
-                case .failure(let error):
-                    self.showAlert = true
-                    Log.networkingLogger.log(level: .error, "Error: \(error)")
-                }
-            }, receiveValue: { value in
-                self.facts = value.data
-                Log.networkingLogger.log(level: .debug, "Received value: \(String(describing: value))")
-            })
+        if facts.isEmpty {
+            factSubscriber = factService.loadFacts(limit: visibleFactCount)
+                .sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        Log.networkingLogger.log(level: .debug, "Publisher completed successfully.")
+                    case .failure(let error):
+                        self.showAlert = true
+                        Log.networkingLogger.log(level: .error, "Error: \(error)")
+                    }
+                }, receiveValue: { value in
+                    self.facts = value.data
+                    Log.networkingLogger.log(level: .debug, "Received value: \(String(describing: value))")
+                })
+        }
     }
     
     private func fetchFact() {

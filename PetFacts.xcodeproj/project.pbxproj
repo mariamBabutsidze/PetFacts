@@ -36,6 +36,7 @@
 		32F8011D2B5136A700DA5465 /* FactRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F8011C2B5136A700DA5465 /* FactRouter.swift */; };
 		32F8011F2B51371E00DA5465 /* Routers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F8011E2B51371E00DA5465 /* Routers.swift */; };
 		32F801212B5137D300DA5465 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801202B5137D300DA5465 /* NavigationState.swift */; };
+		32F801252B51401400DA5465 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801242B51401400DA5465 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		32F8011C2B5136A700DA5465 /* FactRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactRouter.swift; sourceTree = "<group>"; };
 		32F8011E2B51371E00DA5465 /* Routers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routers.swift; sourceTree = "<group>"; };
 		32F801202B5137D300DA5465 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
+		32F801242B51401400DA5465 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				32F8011B2B51368F00DA5465 /* Routers */,
 				32F800FC2B4D42ED00DA5465 /* Views */,
 				32F800B62B4C575000DA5465 /* PetFactsApp.swift */,
+				32F801242B51401400DA5465 /* ContentView.swift */,
 				32F800BA2B4C575100DA5465 /* Assets.xcassets */,
 				32F800BC2B4C575100DA5465 /* Preview Content */,
 			);
@@ -388,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32F800B92B4C575000DA5465 /* FactSwipeView.swift in Sources */,
+				32F801252B51401400DA5465 /* ContentView.swift in Sources */,
 				32F801212B5137D300DA5465 /* NavigationState.swift in Sources */,
 				32F800EF2B4C66EA00DA5465 /* FactRequest.swift in Sources */,
 				32F800ED2B4C626400DA5465 /* NetworkError.swift in Sources */,
