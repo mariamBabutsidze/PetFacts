@@ -12,7 +12,7 @@ struct FactView: View {
     
     var body: some View {
         VStack {
-            Text(fact.attributes.body)
+            Text(fact.text)
                 .multilineTextAlignment(.center)
                 .font(.title)
                 .bold()
@@ -32,6 +32,6 @@ struct FactView: View {
 }
 
 #Preview {
-    FactView(fact: Fact.mockFact)
+    FactView(fact: DogFact.mockDogFact)
 }
 

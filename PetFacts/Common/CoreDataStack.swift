@@ -9,9 +9,11 @@ import Foundation
 import CoreData
 
 class CoreDataStack {
+    static var shared = CoreDataStack()
+    
     private let modelName: String
     
-    init(modelName: String) {
+    init(modelName: String = "PetFacts") {
         self.modelName = modelName
     }
     
@@ -22,6 +24,7 @@ class CoreDataStack {
     private lazy var storeContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: self.modelName)
         container.loadPersistentStores { _, error in
+            container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             if let error = error as NSError? {
                 print("Unresolved error \(error), \(error.userInfo)")
             }

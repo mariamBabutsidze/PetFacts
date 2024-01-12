@@ -46,5 +46,5 @@ struct FactSwipeView: View {
 }
 
 #Preview {
-    FactSwipeView(decisionState: .constant(.disliked), fact: Fact.mockFact, swipable: true)
+    FactSwipeView(decisionState: .constant(.disliked), fact: DogFact.mockDogFact, swipable: true)
 }

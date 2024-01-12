@@ -16,8 +16,8 @@ extension FactEntitty {
         return NSFetchRequest<FactEntitty>(entityName: "FactEntitty")
     }
 
-    @NSManaged public var id: String?
-    @NSManaged public var text: String?
+    @NSManaged public var id: String
+    @NSManaged public var text: String
 
 }
 

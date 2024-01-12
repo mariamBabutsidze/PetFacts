@@ -6,6 +6,7 @@
 //
 
 import Combine
+import CoreData
 
 final class FactsViewModel: ObservableObject {
     @Published public var decisionState = DecisionState.undecided
@@ -33,14 +34,25 @@ final class FactsViewModel: ObservableObject {
     }
     
     private func factLiked() {
-        addFact()
+        saveToFavorites()
+        addNewFact()
     }
     
     private func factDisliked() {
-        addFact()
+        addNewFact()
     }
     
-    private func addFact() {
+    private func saveToFavorites() {
+        guard let likedFact = facts.first else {
+            return
+        }
+        let factEntity = FactEntitty(context: CoreDataStack.shared.managedContext)
+        factEntity.id = likedFact.id
+        factEntity.text = likedFact.text
+        CoreDataStack.shared.saveContext()
+    }
+    
+    private func addNewFact() {
         facts.removeFirst()
         fetchFact()
     }

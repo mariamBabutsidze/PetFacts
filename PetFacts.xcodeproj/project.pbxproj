@@ -21,7 +21,7 @@
 		32F800EB2B4C624B00DA5465 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800EA2B4C624B00DA5465 /* RequestType.swift */; };
 		32F800ED2B4C626400DA5465 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800EC2B4C626400DA5465 /* NetworkError.swift */; };
 		32F800EF2B4C66EA00DA5465 /* FactRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800EE2B4C66EA00DA5465 /* FactRequest.swift */; };
-		32F800F42B4C676400DA5465 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800F32B4C676400DA5465 /* Fact.swift */; };
+		32F800F42B4C676400DA5465 /* DogFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800F32B4C676400DA5465 /* DogFact.swift */; };
 		32F800FB2B4C86DA00DA5465 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800FA2B4C86DA00DA5465 /* Logger.swift */; };
 		32F800FE2B4D430E00DA5465 /* FactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800FD2B4D430E00DA5465 /* FactView.swift */; };
 		32F801002B4D4E7700DA5465 /* FactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800FF2B4D4E7700DA5465 /* FactsView.swift */; };
@@ -37,6 +37,8 @@
 		32F8011F2B51371E00DA5465 /* Routers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F8011E2B51371E00DA5465 /* Routers.swift */; };
 		32F801212B5137D300DA5465 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801202B5137D300DA5465 /* NavigationState.swift */; };
 		32F801252B51401400DA5465 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801242B51401400DA5465 /* ContentView.swift */; };
+		32F801272B5140FA00DA5465 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801262B5140FA00DA5465 /* Fact.swift */; };
+		32F801292B51459100DA5465 /* LikedFactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801282B51459100DA5465 /* LikedFactsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +76,7 @@
 		32F800EA2B4C624B00DA5465 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		32F800EC2B4C626400DA5465 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		32F800EE2B4C66EA00DA5465 /* FactRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactRequest.swift; sourceTree = "<group>"; };
-		32F800F32B4C676400DA5465 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
+		32F800F32B4C676400DA5465 /* DogFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFact.swift; sourceTree = "<group>"; };
 		32F800FA2B4C86DA00DA5465 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		32F800FD2B4D430E00DA5465 /* FactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactView.swift; sourceTree = "<group>"; };
 		32F800FF2B4D4E7700DA5465 /* FactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,8 @@
 		32F8011E2B51371E00DA5465 /* Routers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routers.swift; sourceTree = "<group>"; };
 		32F801202B5137D300DA5465 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
 		32F801242B51401400DA5465 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		32F801262B5140FA00DA5465 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
+		32F801282B51459100DA5465 /* LikedFactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedFactsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +148,8 @@
 				32F800E52B4C602800DA5465 /* Networking */,
 				32F800E02B4C59BD00DA5465 /* Services */,
 				32F800F22B4C675500DA5465 /* Models */,
-				32F800F62B4C752800DA5465 /* ViewModels */,
 				32F8011B2B51368F00DA5465 /* Routers */,
+				32F800F62B4C752800DA5465 /* ViewModels */,
 				32F800FC2B4D42ED00DA5465 /* Views */,
 				32F800B62B4C575000DA5465 /* PetFactsApp.swift */,
 				32F801242B51401400DA5465 /* ContentView.swift */,
@@ -202,7 +206,8 @@
 		32F800F22B4C675500DA5465 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				32F800F32B4C676400DA5465 /* Fact.swift */,
+				32F801262B5140FA00DA5465 /* Fact.swift */,
+				32F800F32B4C676400DA5465 /* DogFact.swift */,
 				32F801072B501B3500DA5465 /* DecisionState.swift */,
 				32F8010E2B5035D600DA5465 /* PetFacts.xcdatamodeld */,
 				32F801152B50368800DA5465 /* FactEntitty+CoreDataClass.swift */,
@@ -225,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				32F801032B4D5B7A00DA5465 /* FactsViewModel.swift */,
+				32F801282B51459100DA5465 /* LikedFactsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -403,11 +409,13 @@
 				32F801022B4D505800DA5465 /* View+Extension.swift in Sources */,
 				32F800E92B4C622B00DA5465 /* RequestProtocol.swift in Sources */,
 				32F800FB2B4C86DA00DA5465 /* Logger.swift in Sources */,
-				32F800F42B4C676400DA5465 /* Fact.swift in Sources */,
+				32F801272B5140FA00DA5465 /* Fact.swift in Sources */,
+				32F800F42B4C676400DA5465 /* DogFact.swift in Sources */,
 				32F801102B5035D600DA5465 /* PetFacts.xcdatamodeld in Sources */,
 				32F8011D2B5136A700DA5465 /* FactRouter.swift in Sources */,
 				32F800FE2B4D430E00DA5465 /* FactView.swift in Sources */,
 				32F801182B50368800DA5465 /* FactEntitty+CoreDataProperties.swift in Sources */,
+				32F801292B51459100DA5465 /* LikedFactsViewModel.swift in Sources */,
 				32F8010A2B5032D800DA5465 /* CoreDataStack.swift in Sources */,
 				32F8011A2B50395C00DA5465 /* LikedFacts.swift in Sources */,
 				32F801082B501B3500DA5465 /* DecisionState.swift in Sources */,

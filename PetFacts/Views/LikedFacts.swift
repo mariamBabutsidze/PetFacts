@@ -9,9 +9,18 @@ import SwiftUI
 
 struct LikedFacts: View {
     @EnvironmentObject private var navigationState: NavigationState
+    @ObservedObject private var viewModel = LikedFactsViewModel()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(viewModel.facts, id: \.id) { fact in
+                Text(fact.text)
+            }
+        }
+        .navigationTitle("Favorites")
+        .onAppear {
+            viewModel.fetchFacts()
+        }
     }
 }
 
