@@ -13,11 +13,25 @@ struct FactsView: View {
     
     var body: some View {
         VStack {
+            if viewModel.noFacts {
+                Text("Oops, looks like there are no facts left!")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(.gray)
+                    .frame(maxWidth: .infinity,
+                           maxHeight: .infinity)
+                    .multilineTextAlignment(.center)
+            }
             ZStack {
                 ForEach(viewModel.facts.reversed(), id: \.id) { fact in
                     let index = viewModel.facts.firstIndex(where: { $0.id == fact.id }) ?? .zero
                     FactSwipeView(decisionState: $viewModel.decisionState, fact: fact, swipable: index == 0)
                         .stacked(at: index, in: viewModel.facts.count)
+                }
+            }
+            if viewModel.loading {
+                ProgressView() {
+                    Text("Loading...")
                 }
             }
         }

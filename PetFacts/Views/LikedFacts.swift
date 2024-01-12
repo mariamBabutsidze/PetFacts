@@ -22,10 +22,26 @@ struct LikedFacts: View {
                 }
             }
         }
+        .overlay(Group {
+            if viewModel.facts.isEmpty {
+                Text("Oops, looks like you don't have favorite facts!")
+                    .font(.title)
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.gray)
+            }
+        })
         .navigationTitle("Favorites")
         .navigationBarItems(trailing: EditButton())
         .onAppear {
             viewModel.fetchFacts()
+        }
+        .alert(isPresented: $viewModel.showAlert) {
+            Alert(
+                title: Text("Error"),
+                message: Text("Something went wrong."),
+                dismissButton: .cancel()
+            )
         }
     }
 }

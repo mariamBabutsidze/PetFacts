@@ -10,6 +10,7 @@ import CoreData
 
 final class LikedFactsViewModel: ObservableObject {
     @Published private(set) var facts: [Fact] = []
+    @Published public var showAlert = false
     
     private var asyncFetchRequest: NSAsynchronousFetchRequest<FactEntitty>?
     
@@ -32,6 +33,7 @@ final class LikedFactsViewModel: ObservableObject {
             }
             try CoreDataStack.shared.managedContext.execute(asyncFetchRequest)
         } catch let error as NSError {
+            showAlert = true
             Log.coreDataLogger.log(level: .error, "Could not fetch \(error), \(error.userInfo)")
         }
     }

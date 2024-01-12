@@ -12,6 +12,10 @@ final class FactsViewModel: ObservableObject {
     @Published public var decisionState = DecisionState.undecided
     @Published private(set) var facts: [Fact] = []
     @Published public var showAlert = false
+    @Published private(set) var loading = false
+    public var noFacts: Bool {
+        facts.isEmpty && !loading
+    }
     
     private let visibleFactCount = 5
     private let factService: FactServicePublisher
@@ -31,6 +35,9 @@ final class FactsViewModel: ObservableObject {
                     break
                 }
         })
+        $facts
+          .map { _ in false }
+          .assign(to: &$loading)
     }
     
     private func factLiked() {
@@ -59,6 +66,7 @@ final class FactsViewModel: ObservableObject {
     
     public func fetchFacts() {
         if facts.isEmpty {
+            loading = true
             factSubscriber = factService.loadFacts(limit: visibleFactCount)
                 .sink(receiveCompletion: { completion in
                     switch completion {
