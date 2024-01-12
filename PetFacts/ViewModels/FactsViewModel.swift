@@ -21,6 +21,7 @@ final class FactsViewModel: ObservableObject {
     private let visibleFactCount = 5
     private let factService: FactServicePublisher
     private var factSubscriber: AnyCancellable?
+    private var factSubscribers: Set<AnyCancellable> = []
     private var decisionSubscriber: AnyCancellable?
     
     public init(factService: FactServicePublisher = FactService()) {
@@ -90,7 +91,7 @@ final class FactsViewModel: ObservableObject {
     }
     
     private func fetchFact() {
-        factSubscriber = factService.loadFact()
+        factService.loadFact()
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
@@ -105,6 +106,7 @@ final class FactsViewModel: ObservableObject {
                 }
                 Log.generalLogger.log(level: .debug, "Received value: \(String(describing: value))")
             })
+            .store(in: &factSubscribers)
     }
 }
 
