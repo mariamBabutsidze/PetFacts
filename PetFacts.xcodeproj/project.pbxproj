@@ -39,6 +39,9 @@
 		32F801252B51401400DA5465 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801242B51401400DA5465 /* ContentView.swift */; };
 		32F801272B5140FA00DA5465 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801262B5140FA00DA5465 /* Fact.swift */; };
 		32F801292B51459100DA5465 /* LikedFactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801282B51459100DA5465 /* LikedFactsViewModel.swift */; };
+		32F8012B2B553E3200DA5465 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F8012A2B553E3200DA5465 /* TestCoreDataStack.swift */; };
+		32F8012D2B55445400DA5465 /* FactCoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F8012C2B55445400DA5465 /* FactCoreDataService.swift */; };
+		32F8012F2B554D5300DA5465 /* PersistanceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F8012E2B554D5300DA5465 /* PersistanceError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +97,9 @@
 		32F801242B51401400DA5465 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		32F801262B5140FA00DA5465 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 		32F801282B51459100DA5465 /* LikedFactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedFactsViewModel.swift; sourceTree = "<group>"; };
+		32F8012A2B553E3200DA5465 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		32F8012C2B55445400DA5465 /* FactCoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCoreDataService.swift; sourceTree = "<group>"; };
+		32F8012E2B554D5300DA5465 /* PersistanceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				32F800C72B4C575100DA5465 /* PetFactsTests.swift */,
+				32F8012A2B553E3200DA5465 /* TestCoreDataStack.swift */,
 			);
 			path = PetFactsTests;
 			sourceTree = "<group>";
@@ -222,6 +229,7 @@
 				32F800E12B4C5C4500DA5465 /* FactService.swift */,
 				32F800E32B4C5DEC00DA5465 /* FactServicePublisher.swift */,
 				32F800EE2B4C66EA00DA5465 /* FactRequest.swift */,
+				32F8012C2B55445400DA5465 /* FactCoreDataService.swift */,
 			);
 			path = Fact;
 			sourceTree = "<group>";
@@ -241,6 +249,7 @@
 				32F800FA2B4C86DA00DA5465 /* Logger.swift */,
 				32F801012B4D505800DA5465 /* View+Extension.swift */,
 				32F801092B5032D800DA5465 /* CoreDataStack.swift */,
+				32F8012E2B554D5300DA5465 /* PersistanceError.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -407,6 +416,7 @@
 				32F800E42B4C5DEC00DA5465 /* FactServicePublisher.swift in Sources */,
 				32F801002B4D4E7700DA5465 /* FactsView.swift in Sources */,
 				32F801022B4D505800DA5465 /* View+Extension.swift in Sources */,
+				32F8012F2B554D5300DA5465 /* PersistanceError.swift in Sources */,
 				32F800E92B4C622B00DA5465 /* RequestProtocol.swift in Sources */,
 				32F800FB2B4C86DA00DA5465 /* Logger.swift in Sources */,
 				32F801272B5140FA00DA5465 /* Fact.swift in Sources */,
@@ -414,6 +424,7 @@
 				32F801102B5035D600DA5465 /* PetFacts.xcdatamodeld in Sources */,
 				32F8011D2B5136A700DA5465 /* FactRouter.swift in Sources */,
 				32F800FE2B4D430E00DA5465 /* FactView.swift in Sources */,
+				32F8012D2B55445400DA5465 /* FactCoreDataService.swift in Sources */,
 				32F801182B50368800DA5465 /* FactEntitty+CoreDataProperties.swift in Sources */,
 				32F801292B51459100DA5465 /* LikedFactsViewModel.swift in Sources */,
 				32F8010A2B5032D800DA5465 /* CoreDataStack.swift in Sources */,
@@ -431,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32F800C82B4C575100DA5465 /* PetFactsTests.swift in Sources */,
+				32F8012B2B553E3200DA5465 /* TestCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

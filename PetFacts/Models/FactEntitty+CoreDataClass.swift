@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 
-public class FactEntitty: NSManagedObject, Fact {
+class FactEntitty: NSManagedObject, Fact {
 
 }

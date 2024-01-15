@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol RequestProtocol {
+protocol RequestProtocol {
     var host: String { get }
     var path: String { get }
     var headers: [String: String] { get }
@@ -18,12 +18,12 @@ public protocol RequestProtocol {
     var scheme: Scheme { get }
 }
 
-public enum Scheme: String {
+enum Scheme: String {
     case http
     case https
 }
 
-public extension RequestProtocol {
+extension RequestProtocol {
     var scheme: Scheme {
         .https
     }

@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import OSLog
 
-public protocol NetworkingManagerProtocol {
+protocol NetworkingManagerProtocol {
     func load<T: Decodable>(_ request: RequestProtocol, type: T.Type) -> AnyPublisher<T, Error>
 }
 
@@ -19,7 +19,7 @@ final class NetworkingManager: NetworkingManagerProtocol {
     private let urlSession: URLSession
     private let decoder = JSONDecoder()
     
-    public init(urlSession: URLSession = URLSession.shared) {
+    init(urlSession: URLSession = URLSession.shared) {
         self.urlSession = urlSession
         decoder.dateDecodingStrategy = .millisecondsSince1970
         decoder.keyDecodingStrategy = .convertFromSnakeCase

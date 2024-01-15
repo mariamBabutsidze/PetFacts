@@ -6,12 +6,11 @@
 //
 
 import Combine
-import CoreData
 
 final class FactsViewModel: ObservableObject {
-    @Published public var decisionState = DecisionState.undecided
+    @Published var decisionState = DecisionState.undecided
     @Published private(set) var facts: [Fact] = []
-    @Published public var showAlert = false
+    @Published var showAlert = false
     @Published private(set) var loading = false
     private(set) var swipable: String?
     public var noFacts: Bool {
@@ -23,9 +22,11 @@ final class FactsViewModel: ObservableObject {
     private var factSubscriber: AnyCancellable?
     private var factSubscribers: Set<AnyCancellable> = []
     private var decisionSubscriber: AnyCancellable?
+    private let factPersistanceService: FactPersistanceService
     
-    public init(factService: FactServicePublisher = FactService()) {
+    public init(factService: FactServicePublisher = FactService(), factPersistanceService: FactPersistanceService = FactCoreDataService()) {
         self.factService = factService
+        self.factPersistanceService = factPersistanceService
         decisionSubscriber = $decisionState
             .sink(receiveValue: { decision in
                 switch decision {
@@ -55,10 +56,7 @@ final class FactsViewModel: ObservableObject {
         guard let likedFact = facts.first else {
             return
         }
-        let factEntity = FactEntitty(context: CoreDataStack.shared.managedContext)
-        factEntity.id = likedFact.id
-        factEntity.text = likedFact.text
-        CoreDataStack.shared.saveContext()
+        _ = factPersistanceService.addFact(likedFact.id, text: likedFact.text)
     }
     
     private func addNewFact() {
