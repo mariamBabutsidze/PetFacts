@@ -11,7 +11,6 @@
 		32F800B92B4C575000DA5465 /* FactSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800B82B4C575000DA5465 /* FactSwipeView.swift */; };
 		32F800BB2B4C575100DA5465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32F800BA2B4C575100DA5465 /* Assets.xcassets */; };
 		32F800BE2B4C575100DA5465 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32F800BD2B4C575100DA5465 /* Preview Assets.xcassets */; };
-		32F800C82B4C575100DA5465 /* PetFactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800C72B4C575100DA5465 /* PetFactsTests.swift */; };
 		32F800D22B4C575100DA5465 /* PetFactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800D12B4C575100DA5465 /* PetFactsUITests.swift */; };
 		32F800D42B4C575100DA5465 /* PetFactsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800D32B4C575100DA5465 /* PetFactsUITestsLaunchTests.swift */; };
 		32F800E22B4C5C4500DA5465 /* FactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F800E12B4C5C4500DA5465 /* FactService.swift */; };
@@ -69,7 +68,6 @@
 		32F800BA2B4C575100DA5465 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32F800BD2B4C575100DA5465 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32F800C32B4C575100DA5465 /* PetFactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetFactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		32F800C72B4C575100DA5465 /* PetFactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFactsTests.swift; sourceTree = "<group>"; };
 		32F800CD2B4C575100DA5465 /* PetFactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetFactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F800D12B4C575100DA5465 /* PetFactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFactsUITests.swift; sourceTree = "<group>"; };
 		32F800D32B4C575100DA5465 /* PetFactsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFactsUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 		32F800C62B4C575100DA5465 /* PetFactsTests */ = {
 			isa = PBXGroup;
 			children = (
-				32F800C72B4C575100DA5465 /* PetFactsTests.swift */,
 				32F8012A2B553E3200DA5465 /* TestCoreDataStack.swift */,
 				32F801302B554F0600DA5465 /* FactCoreDataServiceTests.swift */,
 			);
@@ -444,7 +441,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32F800C82B4C575100DA5465 /* PetFactsTests.swift in Sources */,
 				32F801312B554F0600DA5465 /* FactCoreDataServiceTests.swift in Sources */,
 				32F8012B2B553E3200DA5465 /* TestCoreDataStack.swift in Sources */,
 			);

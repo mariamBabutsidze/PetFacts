@@ -10,7 +10,7 @@ import XCTest
 import CoreData
 
 final class FactCoreDataServiceTests: XCTestCase {
-    var factService: FactCoreDataService!
+    var factService: FactPersistanceService!
     var coreDataStack: CoreDataStack!
     
     override func setUp() {
