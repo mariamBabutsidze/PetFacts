@@ -42,6 +42,7 @@
 		32F8012B2B553E3200DA5465 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F8012A2B553E3200DA5465 /* TestCoreDataStack.swift */; };
 		32F8012D2B55445400DA5465 /* FactCoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F8012C2B55445400DA5465 /* FactCoreDataService.swift */; };
 		32F8012F2B554D5300DA5465 /* PersistanceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F8012E2B554D5300DA5465 /* PersistanceError.swift */; };
+		32F801312B554F0600DA5465 /* FactCoreDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F801302B554F0600DA5465 /* FactCoreDataServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		32F8012A2B553E3200DA5465 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		32F8012C2B55445400DA5465 /* FactCoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCoreDataService.swift; sourceTree = "<group>"; };
 		32F8012E2B554D5300DA5465 /* PersistanceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceError.swift; sourceTree = "<group>"; };
+		32F801302B554F0600DA5465 /* FactCoreDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCoreDataServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			children = (
 				32F800C72B4C575100DA5465 /* PetFactsTests.swift */,
 				32F8012A2B553E3200DA5465 /* TestCoreDataStack.swift */,
+				32F801302B554F0600DA5465 /* FactCoreDataServiceTests.swift */,
 			);
 			path = PetFactsTests;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32F800C82B4C575100DA5465 /* PetFactsTests.swift in Sources */,
+				32F801312B554F0600DA5465 /* FactCoreDataServiceTests.swift in Sources */,
 				32F8012B2B553E3200DA5465 /* TestCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
