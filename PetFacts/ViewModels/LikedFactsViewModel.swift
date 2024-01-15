@@ -7,7 +7,16 @@
 
 import Combine
 
-final class LikedFactsViewModel: ObservableObject {
+protocol LikedFactsViewModelInterface: ObservableObject {
+    var facts: [Fact] { get }
+    var showAlert: Bool { get set }
+    
+    init(factPersistanceService: FactPersistanceService)
+    func fetchFacts()
+    func deleteFact(index: Int)
+}
+
+final class LikedFactsViewModel: LikedFactsViewModelInterface {
     @Published private(set) var facts: [Fact] = []
     @Published var showAlert = false
     

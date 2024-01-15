@@ -7,9 +7,13 @@
 
 import SwiftUI
 
-struct LikedFacts: View {
+struct LikedFacts<ViewModel>: View where ViewModel: LikedFactsViewModelInterface {
     @EnvironmentObject private var navigationState: NavigationState
-    @ObservedObject private var viewModel = LikedFactsViewModel()
+    @ObservedObject private var viewModel: ViewModel
+    
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         List {
@@ -47,5 +51,5 @@ struct LikedFacts: View {
 }
 
 #Preview {
-    LikedFacts()
+    LikedFacts(viewModel: LikedFactsViewModel())
 }

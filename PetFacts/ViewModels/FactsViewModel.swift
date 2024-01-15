@@ -7,13 +7,25 @@
 
 import Combine
 
-final class FactsViewModel: ObservableObject {
+protocol FactsViewModelInterface: ObservableObject {
+    var decisionState: DecisionState { get set }
+    var facts: [Fact] { get }
+    var showAlert: Bool { get set}
+    var loading: Bool { get }
+    var swipable: String? { get }
+    var noFacts: Bool { get }
+    
+    init(factService: FactServicePublisher, factPersistanceService: FactPersistanceService)
+    func fetchFacts()
+}
+
+final class FactsViewModel: FactsViewModelInterface {
     @Published var decisionState = DecisionState.undecided
     @Published private(set) var facts: [Fact] = []
     @Published var showAlert = false
     @Published private(set) var loading = false
     private(set) var swipable: String?
-    public var noFacts: Bool {
+    var noFacts: Bool {
         facts.isEmpty && !loading
     }
     
@@ -24,7 +36,7 @@ final class FactsViewModel: ObservableObject {
     private var decisionSubscriber: AnyCancellable?
     private let factPersistanceService: FactPersistanceService
     
-    public init(factService: FactServicePublisher = FactService(), factPersistanceService: FactPersistanceService = FactCoreDataService()) {
+    init(factService: FactServicePublisher = FactService(), factPersistanceService: FactPersistanceService = FactCoreDataService()) {
         self.factService = factService
         self.factPersistanceService = factPersistanceService
         decisionSubscriber = $decisionState
@@ -37,10 +49,10 @@ final class FactsViewModel: ObservableObject {
                 default:
                     break
                 }
-        })
+            })
         $facts
-          .map { _ in false }
-          .assign(to: &$loading)
+            .map { _ in false }
+            .assign(to: &$loading)
     }
     
     private func factLiked() {
@@ -68,7 +80,7 @@ final class FactsViewModel: ObservableObject {
         fetchFact()
     }
     
-    public func fetchFacts() {
+    func fetchFacts() {
         if facts.isEmpty {
             loading = true
             factSubscriber = factService.loadFacts(limit: visibleFactCount)

@@ -7,9 +7,13 @@
 
 import SwiftUI
 
-struct FactsView: View {
-    @ObservedObject private var viewModel = FactsViewModel()
+struct FactsView<ViewModel>: View where ViewModel: FactsViewModelInterface {
+    @ObservedObject private var viewModel: ViewModel
     @EnvironmentObject private var navigationState: NavigationState
+    
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack {
@@ -58,5 +62,5 @@ struct FactsView: View {
 }
 
 #Preview {
-    FactsView()
+    FactsView(viewModel: FactsViewModel())
 }

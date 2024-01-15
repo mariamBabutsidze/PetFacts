@@ -15,7 +15,7 @@ struct FactRouter {
     func configure() -> some View {
         switch routers {
         case .favorites:
-            LikedFacts()
+            LikedFacts(viewModel: LikedFactsViewModel())
         }
     }
 }
